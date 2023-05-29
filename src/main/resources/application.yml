@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/newtest
+    username: postgres
+    password: amin
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      pool-name: SpringBootJPAHikariCP
+      max-lifetime: 200000
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show_sql: true
+      properties:
+        hibernate:
+          format_sql: true
+        database: postgresql
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
