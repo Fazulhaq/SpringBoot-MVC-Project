@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/inventory")
+@RequestMapping("/")
 public class ItemsController {
     @Autowired
     ItemsService its;
@@ -36,7 +36,7 @@ public class ItemsController {
         List<Items> item= its.getAll();
         model.addAttribute("items", item);
         model.addAttribute("heading", "List of Products");
-        return "redirect:/inventory/all";
+        return "redirect:/all";
     }
     @RequestMapping("/add")
     public String add(Model model){
@@ -45,13 +45,13 @@ public class ItemsController {
         model.addAttribute("heading", "Item Added");
         return "editView";
     }
-    @RequestMapping("/delete")
+    @RequestMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id, Model model){
         Optional<Items> it = its.get(id);
         its.delete(it.get());
         List<Items> items = its.getAll();
         model.addAttribute("item", items);
         model.addAttribute("heading", "List of Products");
-        return "redirect:/inventory/all";
+        return "redirect:/all";
     }
 }

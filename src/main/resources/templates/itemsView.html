@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th ="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link type="text/css" href="/css/bootstrap.min.css" rel="stylesheet">
@@ -27,13 +27,13 @@
                 <td th:text="${item.itemPrice}"/>
                 <td th:text="${item.itemQty}"/>
                 <td>
-                    <a class="btn btn-primary" th:href="@{/inventory/edit/{pathitem}(pathitem=${item.itemId})}" role="button">Edit</a>
-                    <a class="btn btn-primary" th:href="@{/inventory/delete/{pathitem}(pathitem=${item.itemId})}" onclick='return confirm(Are you Sure?)' role="button">Delete</a>
+                    <a class="btn btn-primary" th:href="@{/edit/{pathitem}(pathitem=${item.itemId})}" role="button">Edit</a>
+                    <a class="btn btn-primary" th:href="@{/delete/{pathitem}(pathitem=${item.itemId})}" onClick="return confirm('Are You Sure?')" role="button">Delete</a>
                 </td>
             </tr>
         </tbody>
     </table>
-    <a class="btn btn-primary btn-lg" th:href="@{/inventory/add}" role="button">Add New Item</a>
+    <a class="btn btn-primary btn-lg" th:href="@{/add}" role="button">Add New Item</a>
 </div>
 <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
 </body>

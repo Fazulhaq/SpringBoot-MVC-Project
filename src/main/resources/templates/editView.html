@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <h1><span th:text="${heading}"></span></h1>
-    <form method="post" th:object="${item}" th:action="@{/inventory/update}">
+    <form method="post" th:object="${item}" th:action="@{/update}">
         <div class="form-group row">
             <div class="col-sm-12">
                 <input type="hidden" class="form-control" name="itemId" th:field="${item.itemId}">
